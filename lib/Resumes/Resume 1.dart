@@ -36,31 +36,13 @@ class _Resume1State extends State<Resume1> {
             SizedBox(height: 20,),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
-              height: 50,
+              height: 80,
               width: double.infinity,
-              alignment: Alignment.topCenter,
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: (){
-                          Navigator.pop(context);
-                       },
-                          child: Icon(Icons.arrow_back,color: Colors.white,)),
-                      SizedBox(width: 15,),
-                      Text("Resume",style: TextStyle(fontSize: 30,color: Colors.white),),
-                    ],
-                  ),
-                ],
-              ),
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  border: Border(
-                  bottom: BorderSide(color: Colors.black,width: 2)
-                )
+                border: Border(bottom: BorderSide(color: Colors.black))
               ),
+              alignment: Alignment.topCenter,
+              child: Text("Resume",style: TextStyle(fontSize: 30,color: Colors.black),),
             ),
             Expanded (
               child: Container(
@@ -76,7 +58,7 @@ class _Resume1State extends State<Resume1> {
                             Container(
                               height: 120,
                               width: 120,
-                              child: m1.imagegala!=""?Image.file(File("${m1.imagegala}"),fit: BoxFit.fill,):Image.file(File("${m1.imagecame}"),fit: BoxFit.fill,),
+                              child:Image.file(File("${m1.image}"),fit: BoxFit.fill,),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(color: Colors.black54,width: 2)

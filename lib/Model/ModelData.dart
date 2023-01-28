@@ -1,6 +1,6 @@
 class ModelData
 {
-  String? skill,aboutyou,imagecame,imagegala,nationality,email,qualification,name,surname,phone,address,experties,lastcompany,experience,res10,res12,hobby,intreast,gender,language1,language2,language3,city,bdate,byear,bmonth;
+  String? comsome,compost,comname,skill,aboutyou,image,nationality,email,qualification,name,surname,phone,address,experties,lastcompany,experience,res10,res12,hobby,intreast,gender,language1,language2,language3,city,bdate,byear,bmonth;
 
   ModelData({
       this.name,
@@ -25,9 +25,11 @@ class ModelData
       this.qualification,
       this.email,
       this.nationality,
-      this.imagecame,
-      this.imagegala,
+      this.image,
       this.aboutyou,
       this.skill,
+      this.comname,
+      this.compost,
+      this.comsome
       });
 }

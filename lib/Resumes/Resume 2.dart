@@ -15,8 +15,7 @@ class Resume2 extends StatefulWidget {
 
 class _Resume2State extends State<Resume2> {
 
-  List<Icon> icons = [Icon(Icons.mail, size: 15, color: Colors.white,)];
-
+  double spacing = 20;
   @override
   Widget build(BuildContext context) {
     ModelData m1 = ModalRoute
@@ -48,8 +47,8 @@ class _Resume2State extends State<Resume2> {
                   width: 120,
                   child: CircleAvatar(
                     radius: 60,
-                    backgroundImage: FileImage(File("${m1.imagegala}"),),
-                  )
+                    backgroundImage: FileImage(File("${m1.image}"))
+                  ),
               ),
             ),
             Padding(
@@ -79,7 +78,7 @@ class _Resume2State extends State<Resume2> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 50,),
+                      SizedBox(height: spacing,),
                       Row(
                         children: [
                           Padding(
@@ -168,17 +167,80 @@ class _Resume2State extends State<Resume2> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 180,top: 200),
+              padding: EdgeInsets.only(left: 180,top: 250),
               child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 height: double.infinity,
                 width: double.infinity,
                 child: Column(
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.arrow_forward_ios,color: Color(0xff6c999a),)
+                        Icon(Icons.arrow_forward_ios,color: Color(0xff6c999a),),
+                        SizedBox(width: 5,),
+                        Text("Education",style: TextStyle(fontWeight: FontWeight.bold),),
                       ],
-                    )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30),
+                      child: Row(
+                        children: [
+                          Container(
+                              width: 150,
+                              child: Text("Basically:-      ${m1.qualification}\n10th result:-   ${m1.res10}%\n12th result:-   ${m1.res12}%\n")),
+                            ],
+                          ),
+                    ),
+                    SizedBox(height: spacing,),
+                    Row(
+                      children: [
+                        Icon(Icons.arrow_forward_ios,color: Color(0xff6c999a),),
+                        SizedBox(width: 5,),
+                        Text("Languages",style: TextStyle(fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30.0),
+                      child: Row(
+                        children: [
+                          Text("${m1.language1}\n${m1.language2}\n${m1.language3}")
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: spacing,),
+                    Row(
+                      children: [
+                        Icon(Icons.arrow_forward_ios,color: Color(0xff6c999a),),
+                        SizedBox(width: 5,),
+                        Text("Skills",style: TextStyle(fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30.0),
+                      child: Row(
+                        children: [
+                          Container(
+                              width: 150,
+                              child: Text("${m1.skill}")),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: spacing,),
+                    Row(
+                      children: [
+                        Icon(Icons.arrow_forward_ios,color: Color(0xff6c999a),),
+                        SizedBox(width: 5,),
+                        Text("Experience",style: TextStyle(fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30.0),
+                      child: Row(
+                        children: [
+                          Text("${m1.experience} years")
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -189,3 +251,5 @@ class _Resume2State extends State<Resume2> {
     );
   }
 }
+
+//(m1.image != "" ? FileImage(File("${m1.image}")) : AssetImage("assets/images/resumes/resume1.jpg")),

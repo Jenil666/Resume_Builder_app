@@ -33,6 +33,10 @@ class _Screen2State extends State<Screen2> {
   TextEditingController txtnationality = TextEditingController(text: "India");
   TextEditingController txtaboutyou = TextEditingController(text: "HardWorker");
   TextEditingController txtskill = TextEditingController(text: "C++");
+  TextEditingController txtco1pos = TextEditingController(text: "Manager ");
+  TextEditingController txtco1name = TextEditingController(text: "vipro ");
+  TextEditingController txtco1some = TextEditingController(text: "...");
+
 
   bool coper = false;
   bool cohom = false;
@@ -47,11 +51,13 @@ class _Screen2State extends State<Screen2> {
   bool cocity = false;
   bool colang = false;
   bool colgen = false;
+  bool coexperience = false;
   bool lan1 = false;
   bool lan2 = false;
   bool lan3 = false;
   bool visi = true;
   bool coabout = false;
+
 
   String gen = "Male";
   String city = "Surat";
@@ -59,8 +65,7 @@ class _Screen2State extends State<Screen2> {
   String lan1s = "";
   String lan2s = "";
   String lan3s = "";
-  String pathgala = "";
-  String pathcam = "";
+  String path = "";
 
   int i = 1;
 
@@ -622,7 +627,7 @@ class _Screen2State extends State<Screen2> {
                               XFile? xfile = await image.pickImage(source: ImageSource.gallery);
 
                               setState(() {
-                                pathgala = xfile!.path;
+                                path = xfile!.path;
 
                               });
 
@@ -656,7 +661,7 @@ class _Screen2State extends State<Screen2> {
                               ImagePicker camera = ImagePicker();
                               XFile? xfile = await camera.pickImage(source: ImageSource.camera);
                               setState(() {
-                                pathcam = xfile!.path;
+                                path = xfile!.path;
                               });
                             },
                             child: Container(
@@ -705,6 +710,36 @@ class _Screen2State extends State<Screen2> {
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ],
+                ),
+                ExpansionTile(
+                  onExpansionChanged: (value){
+                    setState(() {
+                      coexperience = value;
+                    });
+                  },
+                    leading: Icon(Icons.auto_graph_outlined,color: coexperience?Colors.black:Colors.black54,),
+                    title: Text("Something about Your Last company",style: TextStyle(color: Colors.black,fontWeight: coexperience?FontWeight.bold:FontWeight.normal),),
+                  childrenPadding: EdgeInsets.symmetric(horizontal: 10),
+                children: [
+                  TextFormField(
+                    controller: txtco1pos,
+                    decoration: InputDecoration(
+                      hintText: "Your Position in Company",
+                    ),
+                  ),
+                  TextFormField(
+                    controller: txtco1name,
+                    decoration: InputDecoration(
+                      hintText: "Name Company",
+                    ),
+                  ),
+                  TextFormField(
+                    controller: txtco1some,
+                    decoration: InputDecoration(
+                      hintText: "Why you leave it",
+                    ),
+                  ),
+                ],
                 ),
                 ExpansionTile(
                   onExpansionChanged: (value) {
@@ -815,8 +850,8 @@ class _Screen2State extends State<Screen2> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                   print("$pathgala");
-                        if (FormKey.currentState!.validate() && (pathgala!="" || pathcam!="")) {
+
+                        if (FormKey.currentState!.validate() && path!="" ) {
                       ModelData m1 = ModelData(
                           name: txtName.text,
                           surname: txtSurname.text,
@@ -840,10 +875,12 @@ class _Screen2State extends State<Screen2> {
                           qualification: txtdegree.text,
                           email: txtemail.text,
                           nationality: txtnationality.text,
-                          imagecame: pathcam,
-                          imagegala: pathgala,
+                          image: path,
                           aboutyou: txtaboutyou.text,
                           skill: txtskill.text,
+                          comname: txtco1name.text,
+                          compost: txtco1pos.text,
+                          comsome: txtco1some.text,
                       );
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text("Data Received 😊"),
