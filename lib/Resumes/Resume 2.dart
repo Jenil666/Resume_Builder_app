@@ -45,7 +45,7 @@ class _Resume2State extends State<Resume2> {
               child: Container(
                   height: 120,
                   width: 120,
-                  child: CircleAvatar(
+                  child:  CircleAvatar(
                     radius: 60,
                     backgroundImage: FileImage(File("${m1.image}"))
                   ),
