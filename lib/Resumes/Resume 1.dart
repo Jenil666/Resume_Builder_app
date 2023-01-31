@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:resume_builder_app/Model/PDFS.dart';
 
 import '../Model/ModelData.dart';
 
@@ -31,6 +32,13 @@ class _Resume1State extends State<Resume1> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(onPressed: (){
+              resume1(m1);
+            }, icon: Icon(Icons.save))
+          ],
+        ),
         body: Column(
           children: [
             SizedBox(height: 20,),
