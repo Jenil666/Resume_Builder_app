@@ -9,6 +9,9 @@ import 'ModelData.dart';
 void resume1(ModelData m1)
 async {
   final pdf = pw.Document();
+  var image = pw.MemoryImage(
+    File('${m1.image}').readAsBytesSync(),
+  );
   pdf.addPage(pw.Page(
     margin: pw.EdgeInsets.all(10),
     orientation: pw.PageOrientation.portrait,
@@ -41,7 +44,7 @@ async {
                           pw.Container(
                             height: 120,
                             width: 120,
-                            child:pw.Text("Photo"),//Image.file(File("${m1.image}"),fit: pw.BoxFit.fill,),
+                            child: pw.Image(image),
                             decoration: pw.BoxDecoration(
                                 color: PdfColors.white,
                                 border: pw.Border.all(color: PdfColors.black,width: 2)
