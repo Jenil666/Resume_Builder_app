@@ -1,7 +1,7 @@
-import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:resume_builder_app/pdf%20sam.dart';
 
 import '../Model/ModelData.dart';
 
@@ -24,6 +24,13 @@ class _Resume2State extends State<Resume2> {
         .arguments as ModelData;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(onPressed: () {
+              resume2(m1);
+            }, icon: Icon(Icons.save))
+          ],
+        ),
         body: Stack(
           children: [
             Container(
@@ -47,7 +54,7 @@ class _Resume2State extends State<Resume2> {
                   width: 120,
                   child:  CircleAvatar(
                     radius: 60,
-                    backgroundImage: FileImage(File("${m1.image}"))
+                    backgroundImage: AssetImage("assets/images/allu.jpg"),
                   ),
               ),
             ),

@@ -269,3 +269,246 @@ async {
   await file.writeAsBytes(await pdf.save());
   print("$file");
 }
+
+
+
+void resume2(ModelData m1)
+async {
+  final pdf = pw.Document();
+  var image = pw.MemoryImage(
+    File('${m1.image}').readAsBytesSync(),
+  );
+  pdf.addPage(pw.Page(
+    margin: pw.EdgeInsets.all(10),
+    orientation: pw.PageOrientation.portrait,
+    pageFormat: PdfPageFormat.a4,
+    build: (context) {
+      return pw.Stack(
+        children: [
+          pw.Container(
+            margin: pw.EdgeInsets.only(top: 50),
+            height: 150,
+            width: double.infinity,
+            color: PdfColors.black,
+          ),
+          pw.Padding(
+            padding: pw.EdgeInsets.only(left: 30),
+            child: pw.Container(
+              height: double.infinity,
+              width: 150,
+              color: PdfColors.black,
+            ),
+          ),
+          pw. Padding(
+            padding: pw.EdgeInsets.only(left: 45, top: 60),
+            child: pw.Container(
+              height: 120,
+              width: 120,
+              child:  pw.Container(
+                decoration: pw.BoxDecoration(
+                    borderRadius: pw.BorderRadius.circular(30000)
+                ),
+                child: pw.Image(image),
+              ),
+            ),
+          ),
+          pw.Padding(
+            padding: pw.EdgeInsets.only(left: 30, top: 230),
+            child: pw.Expanded(
+              child: pw.Container(
+                width: 150,
+                child: pw.Column(
+                  children: [
+                    pw.Row(
+                      children: [
+                        pw.Padding(
+                          padding: pw.EdgeInsets.only(left: 10),
+                          child: pw.Text("Profile",
+                            style: pw.TextStyle(fontSize: 15,
+                                fontWeight: pw.FontWeight.bold,
+                                color: PdfColors.white),),
+                        )
+                      ],
+                    ),
+                    pw.Container(
+                      padding: pw.EdgeInsets.only(left: 10),
+                      child: pw.Row(
+                        children: [
+                          pw.Text("${m1.aboutyou}",
+                            style: pw.TextStyle(color: PdfColors.white),),
+                        ],
+                      ),
+                    ),
+                    pw.Row(
+                      children: [
+                        pw.Padding(
+                          padding: pw.EdgeInsets.only(left: 10),
+                          child: pw.Text("Contact Me",
+                            style: pw.TextStyle(fontSize: 15,
+                              fontWeight: pw.FontWeight.bold,
+                              color: PdfColors.white,),),
+                        )
+                      ],
+                    ),
+                    pw.Container(
+                      child: pw.Column(
+                        children: [
+                          pw.SizedBox(height: 8,),
+                          pw.Container(
+                              padding: pw.EdgeInsets.symmetric(horizontal: 10),
+                              width: 150,
+                              child: pw.Row(
+                                children: [
+                                  pw.Icon(pw.IconData(0xe79a), color: PdfColors.white,
+                                    size: 15,),
+                                  pw.SizedBox(width: 5,),
+                                  pw.Container(width: 110,
+                                      child: pw.Text("${m1.phone}",
+                                        style: pw.TextStyle(
+                                            color: PdfColors.white),)),
+                                ],
+                              )),
+                          pw.SizedBox(height: 5,),
+                          pw.Container(
+                              padding: pw.EdgeInsets.symmetric(horizontal: 10),
+                              width: 150,
+                              child: pw.Row(
+                                children: [
+                                  pw. Icon(pw.IconData(0xe79a), color: PdfColors.white,
+                                    size: 15,),
+                                  pw.SizedBox(width: 5,),
+                                  pw.Container(width: 110,
+                                      child: pw.Text("${m1.email}",
+                                        style: pw.TextStyle(
+                                            color: PdfColors.white),)),
+                                ],
+                              )),
+                          pw. SizedBox(height: 5,),
+                          pw. Container(
+                              padding: pw.EdgeInsets.symmetric(horizontal: 10),
+                              width: 150,
+                              child: pw.Row(
+                                children: [
+                                  pw.Icon(pw.IconData(0xe79a), color: PdfColors.white,
+                                    size: 15,),
+                                  pw.SizedBox(width: 5,),
+                                  pw.Container(width: 110,
+                                      child: pw.Text("${m1.address}",
+                                        style: pw.TextStyle(
+                                            color: PdfColors.white),)),
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          pw. Padding(
+            padding: pw.EdgeInsets.only(left: 180, top: 75),
+            child: pw.Padding(
+              padding: pw.EdgeInsets.only(left:10),
+              child: pw.Container(height: 100, width: 200,
+                child: pw.Column(children: [
+                  pw. Row(
+                    children: [
+                      pw. Text("${m1.name}\n${m1.surname}",style: pw.TextStyle(fontSize: 25,color: PdfColors.black,fontWeight:pw. FontWeight.bold),),
+                    ],
+                  ),
+                  pw. SizedBox(height: 5,),
+                  pw.Row(
+                    children: [
+                      pw.Text("${m1.experties}",style: pw.TextStyle(color: PdfColors.black),),
+                    ],
+                  ),
+                ],),),
+            ),
+          ),
+          pw.Padding(
+            padding: pw.EdgeInsets.only(left: 180,top: 250),
+            child: pw.Container(
+              padding: pw.EdgeInsets.symmetric(horizontal: 10),
+              height: double.infinity,
+              width: double.infinity,
+              child: pw.Column(
+                children: [
+                  pw.Row(
+                    children: [
+                      pw.Icon(pw.IconData(0xe79a),color: PdfColors.black,),
+                      pw.SizedBox(width: 5,),
+                      pw.Text("Education",style: pw.TextStyle(fontWeight: pw.FontWeight.bold),),
+                    ],
+                  ),
+                  pw.Padding(
+                    padding: pw.EdgeInsets.only(left: 30),
+                    child: pw.Row(
+                      children: [
+                        pw.Container(
+                            width: 150,
+                            child: pw.Text("Basically:-      ${m1.qualification}\n10th result:-   ${m1.res10}%\n12th result:-   ${m1.res12}%\n")),
+                      ],
+                    ),
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Icon(pw.IconData(0xe79a),color: PdfColors.white,),
+                      pw.SizedBox(width: 5,),
+                      pw.Text("Languages",style: pw.TextStyle(fontWeight: pw.FontWeight.bold),),
+                    ],
+                  ),
+                  pw.Padding(
+                    padding: pw.EdgeInsets.only(left: 30.0),
+                    child: pw.Row(
+                      children: [
+                        pw.Text("${m1.language1}\n${m1.language2}\n${m1.language3}")
+                      ],
+                    ),
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Icon(pw.IconData(0xe79a),color: PdfColors.black,),
+                      pw.SizedBox(width: 5,),
+                      pw.Text("Skills",style: pw.TextStyle(fontWeight: pw.FontWeight.bold),),
+                    ],
+                  ),
+                  pw.Padding(
+                    padding: pw.EdgeInsets.only(left: 30.0),
+                    child:pw. Row(
+                      children: [
+                        pw. Container(
+                            width: 150,
+                            child: pw.Text("${m1.skill}")),
+                      ],
+                    ),
+                  ),
+                  pw.Row(
+                    children: [
+                      pw.Icon(pw.IconData(0xe79a),color: PdfColors.black,),
+                      pw.SizedBox(width: 5,),
+                      pw.Text("Experience",style: pw.TextStyle(fontWeight: pw.FontWeight.bold),),
+                    ],
+                  ),
+                  pw. Padding(
+                    padding: pw.EdgeInsets.only(left: 30.0),
+                    child: pw.Row(
+                      children: [
+                        pw.Text("${m1.experience} years")
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  )
+  );
+  Directory? directory = await getExternalStorageDirectory();
+  var file = File("${directory!.path}/myresume.pdf");
+  await file.writeAsBytes(await pdf.save());
+  print("$file");
+}

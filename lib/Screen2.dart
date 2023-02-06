@@ -67,7 +67,8 @@ class _Screen2State extends State<Screen2> {
   String lan3s = "";
   String path = "";
 
-  int i = 1;
+
+  int? selected;
 
   var FormKey = GlobalKey<FormState>();
 
@@ -100,6 +101,7 @@ class _Screen2State extends State<Screen2> {
                   height: 20,
                 ),
                 ExpansionTile(
+
                   maintainState: visi,
                   textColor: Colors.black,
                   onExpansionChanged: (value) {
@@ -851,7 +853,7 @@ class _Screen2State extends State<Screen2> {
                 ElevatedButton(
                   onPressed: () {
 
-                        if (FormKey.currentState!.validate() && path!="" ) {
+                        if (FormKey.currentState!.validate() ) {
                       ModelData m1 = ModelData(
                           name: txtName.text,
                           surname: txtSurname.text,

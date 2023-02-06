@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:resume_builder_app/pra.dart';
 
 import 'Images.dart';
 import 'Resumes/Resume 1.dart';
@@ -13,6 +14,7 @@ void main()
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
+      //initialRoute: 'pre',
       routes: {
         '/':(context)=>Screen2(),
         'Selection':(context)=>Images(),
@@ -20,6 +22,7 @@ void main()
         'Resume2':(context)=>Resume2(),
         'Resume3':(context)=>Resume3(),
         'Resume4':(context)=>Resume4(),
+        'pre':(context)=>Pra(),
       },
     ),
   );
