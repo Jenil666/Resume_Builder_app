@@ -14,28 +14,28 @@ class Screen2 extends StatefulWidget {
 }
 
 class _Screen2State extends State<Screen2> {
-  TextEditingController txtName = TextEditingController(text: "Jenil");
-  TextEditingController txtSurname = TextEditingController(text: "Chandarana");
-  TextEditingController txtPhone = TextEditingController(text: "6359254174");
-  TextEditingController txtadd = TextEditingController(text: "JT nagar");
-  TextEditingController txtexperties = TextEditingController(text: "Flutter");
-  TextEditingController txtlastcompany = TextEditingController(text: "vsg");
-  TextEditingController txtexperience = TextEditingController(text: "5");
-  TextEditingController txtres10 = TextEditingController(text: "55");
-  TextEditingController txtres12 = TextEditingController(text: "60");
-  TextEditingController txthobby = TextEditingController(text: "kabadi");
-  TextEditingController txtintreast = TextEditingController(text: "hacking");
-  TextEditingController txtdate = TextEditingController(text: "6");
-  TextEditingController txtmonth = TextEditingController(text: "6");
-  TextEditingController txtyear = TextEditingController(text: "2004");
-  TextEditingController txtdegree = TextEditingController(text: "bca");
-  TextEditingController txtemail = TextEditingController(text: "jenilchandarana33@gmail.com");
-  TextEditingController txtnationality = TextEditingController(text: "India");
-  TextEditingController txtaboutyou = TextEditingController(text: "HardWorker");
-  TextEditingController txtskill = TextEditingController(text: "C++");
-  TextEditingController txtco1pos = TextEditingController(text: "Manager ");
-  TextEditingController txtco1name = TextEditingController(text: "vipro ");
-  TextEditingController txtco1some = TextEditingController(text: "...");
+  TextEditingController txtName = TextEditingController();
+  TextEditingController txtSurname = TextEditingController();
+  TextEditingController txtPhone = TextEditingController();
+  TextEditingController txtadd = TextEditingController();
+  TextEditingController txtexperties = TextEditingController();
+  TextEditingController txtlastcompany = TextEditingController();
+  TextEditingController txtexperience = TextEditingController();
+  TextEditingController txtres10 = TextEditingController();
+  TextEditingController txtres12 = TextEditingController();
+  TextEditingController txthobby = TextEditingController();
+  TextEditingController txtintreast = TextEditingController();
+  TextEditingController txtdate = TextEditingController();
+  TextEditingController txtmonth = TextEditingController();
+  TextEditingController txtyear = TextEditingController();
+  TextEditingController txtdegree = TextEditingController();
+  TextEditingController txtemail = TextEditingController();
+  TextEditingController txtnationality = TextEditingController();
+  TextEditingController txtaboutyou = TextEditingController();
+  TextEditingController txtskill = TextEditingController();
+  TextEditingController txtco1pos = TextEditingController();
+  TextEditingController txtco1name = TextEditingController();
+  TextEditingController txtco1some = TextEditingController();
 
 
   bool coper = false;

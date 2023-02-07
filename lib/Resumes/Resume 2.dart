@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:resume_builder_app/pdf%20sam.dart';
 
 import '../Model/ModelData.dart';
+import '../Model/PDFS.dart';
 
 
 class Resume2 extends StatefulWidget {
@@ -25,6 +26,7 @@ class _Resume2State extends State<Resume2> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           actions: [
             IconButton(onPressed: () {
               resume2(m1);
@@ -54,7 +56,7 @@ class _Resume2State extends State<Resume2> {
                   width: 120,
                   child:  CircleAvatar(
                     radius: 60,
-                    backgroundImage: AssetImage("assets/images/allu.jpg"),
+                    backgroundImage: AssetImage("${m1.image}"),
                   ),
               ),
             ),

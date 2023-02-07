@@ -33,6 +33,7 @@ class _Resume1State extends State<Resume1> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           actions: [
             IconButton(onPressed: (){
               resume1(m1);
